@@ -1,0 +1,19 @@
+1 package com.homecompany.chapter18.exercise13;
+2 
+3 import com.homecompany.chapter18.justexamples.BufferedInputFile;
+4 
+5 import java.io.*;
+6 
+7 public class BasicFileOutputWithLineNumber {
+8     static String file = "BasicFileOutputWithLineNumber.out";
+9 
+10     public static void main(String[] args) throws IOException {
+11         LineNumberReader in = new LineNumberReader(new StringReader
+12                 (BufferedInputFile.read("BasicFileOutputWithLineNumber.java")));
+13         PrintWriter out = new PrintWriter(new FileWriter("BasicFileOutputWithLineNumber.out"));
+14         String s;
+15         while ((s=in.readLine()) !=null)
+16             out.println(in.getLineNumber() + " " + s);
+17         out.close();
+18     }
+19 }

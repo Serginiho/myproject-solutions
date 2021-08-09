@@ -1,0 +1,25 @@
+1: package com.homecompany.chapter18.justexamples;
+2: 
+3: import java.io.BufferedReader;
+4: import java.io.IOException;
+5: import java.io.PrintWriter;
+6: import java.io.StringReader;
+7: 
+8: public class FileOutputShortcut {
+9:     static String file = "FileOutputShortcut.out";
+10:     public static void main(String[] args)
+11:             throws IOException {
+12:         BufferedReader in = new BufferedReader(
+13:                 new StringReader(
+14:                         BufferedInputFile.read("FileOutputShortcut.java")));
+15:         // Here's the shortcut:
+16:         PrintWriter out = new PrintWriter(file);
+17:         int lineCount = 1;
+18:         String s;
+19:         while((s = in.readLine()) != null )
+20:             out.println(lineCount++ + ": " + s);
+21:         out.close();
+22:         // Show the stored file:
+23:         System.out.println(BufferedInputFile.read(file));
+24:     }
+25: }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<people>
+    <person>
+        <firstName>Jhon</firstName>
+        <lastName>Watson</lastName>
+        <address>
+            <country>Great Britain</country>
+            <city>London</city>
+            <street>Baker street</street>
+            <houseNumber>212</houseNumber>
+        </address>
+    </person>
+    <person>
+        <firstName>Sherlock</firstName>
+        <lastName>Holmes</lastName>
+        <address>
+            <country>Great Britain</country>
+            <city>London</city>
+            <street>Baker street</street>
+            <houseNumber>212</houseNumber>
+        </address>
+    </person>
+</people>

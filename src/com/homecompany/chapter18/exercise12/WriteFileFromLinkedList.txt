@@ -1,0 +1,24 @@
+1 package com.homecompany.chapter18.exercise12;
+2 
+3 import com.homecompany.chapter18.exercise8.ReadInLListFromCL;
+4 import com.homecompany.chapter18.justexamples.BufferedInputFile;
+5 
+6 import java.io.IOException;
+7 import java.io.PrintWriter;
+8 import java.util.List;
+9 
+10 public class ReadAndWrite {
+11     static String file = "WriteFileFromLinkedList.txt";
+12 
+13     public static void main(String[] args) throws IOException {
+14         List<String> list = ReadInLListFromCL.readWithCL(args);
+15         PrintWriter out = new PrintWriter(file);
+16         int countLine = 1;
+17         for (String s:
+18              list) {
+19             out.println(countLine++ + " " + s);
+20         }
+21         out.close();
+22         System.out.println(BufferedInputFile.read("WriteFileFromLinkedList.txt"));
+23     }
+24 }

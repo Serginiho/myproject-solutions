@@ -1,0 +1,45 @@
+1 package com.homecompany.chapter18.exercise14;
+2 
+3 import com.homecompany.chapter18.justexamples.BufferedInputFile;
+4 
+5 import java.io.*;
+6 
+7 public class TestBufferNonBuffer {
+8     public static void readWriteWithBuffer (String inputFile, String outputFile) throws IOException {
+9         BufferedReader in = new BufferedReader(
+10                 new StringReader(
+11                         BufferedInputFile.read(inputFile)));
+12         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(outputFile)));
+13         int lineCount = 1;
+14         String s;
+15         while ((s=in.readLine()) != null)
+16             out.println(lineCount++ + " " + s);
+17         out.close();
+18     }
+19     public static void readWriteWithoutBuffer (String inputFile, String outputFile) throws IOException {
+20         DataInputStream in = new DataInputStream(new FileInputStream(inputFile));
+21         PrintStream out = new PrintStream(outputFile);
+22         while (in.available() != 0)
+23             out.print((char)in.readByte());
+24         out.close();
+25         in.close();
+26     }
+27 
+28     public static void main(String[] args) throws IOException {
+29         String fileIn = "TestBufferNonBuffer.java", fileOut = "TestNonBuffer.out", fileOutForBuffer = "TestBuffer.out";
+30         long start1, duration1, start2, duration2;
+31         System.out.print("Duration for test with buffer: ");
+32         start1 = System.nanoTime();
+33         readWriteWithBuffer(fileIn, fileOutForBuffer);
+34         duration1 = System.nanoTime() - start1;
+35         System.out.println(duration1 + " nanosecond");
+36         System.out.println("-------------");
+37         System.out.print("Duration for test without buffer: ");
+38         start2 = System.nanoTime();
+39         readWriteWithoutBuffer(fileIn, fileOut);
+40         duration2 = System.nanoTime() - start2;
+41         System.out.println(duration2 + " nanosecond");
+42         System.out.println("-------------");
+43         System.out.println("Difference between method is " + (duration1 - duration2) + " nanosecond");
+44     }
+45 }

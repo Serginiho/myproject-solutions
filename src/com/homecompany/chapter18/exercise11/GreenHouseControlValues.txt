@@ -1,0 +1,13 @@
+LightOn : 400
+LightOff : 200
+WaterOn : 800
+WaterOff : 600
+ThermostatNight : 200
+ThermostatDay : 300
+Bell : 500
+AiringOn : 600
+AiringOff : 1800
+HumidificationOn : 2000
+HumidificationOff : 2200
+Restart : 2400
+Terminate : 100

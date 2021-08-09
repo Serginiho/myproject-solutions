@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath>
+          <entry name="$PROJECT_DIR$/out/artifacts/AnnotationPreprocessor_jar/AnnotationPreprocessor.jar" />
+        </processorPath>
+      </profile>
+      <profile name="MyProcessor" enabled="true">
+        <sourceOutputDir name="generated/annotation" />
+        <outputRelativeToContentRoot value="true" />
+        <processor name="com.organization.annotationprocessor.extract.InterfaceExtractorProcessor" />
+        <processor name="com.organization.annotationprocessor.sql.TableCreationProcessor" />
+        <processorPath useProcessorModulePath="true">
+          <entry name="$PROJECT_DIR$/../CustomProcessor/out/artifacts/CustomProcessor_jar/CustomProcessor.jar" />
+        </processorPath>
+        <module name="myproject" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

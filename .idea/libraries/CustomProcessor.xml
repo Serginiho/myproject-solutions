@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="CustomProcessor">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../CustomProcessor/out/artifacts/CustomProcessor_jar/CustomProcessor.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
