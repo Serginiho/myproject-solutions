@@ -4,7 +4,7 @@ import util.Generator;
 
 public class FibonacciTask3 implements Runnable{
     private final int quantity;
-    FibonacciTask3(int n) {
+    public FibonacciTask3(int n) {
         quantity = n;
     }
     Generator<Integer> gen = new Generator<>() {

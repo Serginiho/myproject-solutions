@@ -1,7 +1,7 @@
 package com.homecompany.chapter21.exercise1;
 
 public class TaskA implements Runnable{
-    TaskA () {
+    public TaskA () {
         System.out.println("Start TaskA");
     }
     @Override
