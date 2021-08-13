@@ -12,7 +12,10 @@ public class FibonacciSumTask implements Callable<BigInteger> {
 
     @Override
     public BigInteger call() throws Exception {
-        return Stream.iterate(new BigInteger[]{BigInteger.ZERO,BigInteger.ONE}, fib -> new BigInteger[]{fib[1], fib[0].add(fib[1])})
-                .limit(quantity).map(fib -> fib[0]).reduce(BigInteger.ZERO, BigInteger::add);
+        return Stream.iterate(new BigInteger[]{BigInteger.ZERO,BigInteger.ONE},
+                        fib -> new BigInteger[]{fib[1], fib[0].add(fib[1])})
+                .limit(quantity)
+                .map(fib -> fib[0])
+                .reduce(BigInteger.ZERO, BigInteger::add);
     }
 }
